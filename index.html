@@ -13,7 +13,7 @@
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
     .card { padding:1rem; border:1px solid #ccc; border-radius:8px; }
     button { cursor:pointer; }
-    input, select { width: 100%; padding:0.5rem; margin-bottom:1rem; border-radius:6px; border:1px solid #ccc; }
+    input, select, textarea { width: 100%; padding:0.5rem; margin-bottom:1rem; border-radius:6px; border:1px solid #ccc; }
   </style>
 </head>
 <body>
@@ -81,8 +81,8 @@
     ⏰ <strong>Hours:</strong> Monday – Friday, 8:00 AM – 7:00 PM
   </p>
 
-  <h3>Request a Quote (English)</h3>
-  <!-- Email Form -->
+  <!-- EMAIL FORM ENGLISH -->
+  <h3>Request a Quote by Email (English)</h3>
   <form action="mailto:pro365e@gmail.com" method="post" enctype="text/plain">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
@@ -92,13 +92,47 @@
       <option>Biweekly Lawn Service</option>
       <option>One-Time Cut</option>
       <option>Cleanup / Leaf Removal</option>
+      <option>Landscape Design</option>
+      <option>Hedging</option>
+      <option>Mulch / Rocks</option>
+      <option>Other</option>
     </select>
+    <textarea name="notes" placeholder="Additional Information (Optional)"></textarea>
     <button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">
       Send Quote by Email
     </button>
   </form>
 
-  <h3>Formulario de Cotización (Español)</h3>
+  <!-- TEXT FORM ENGLISH -->
+  <h3>Request a Quote by Text (English)</h3>
+  <form onsubmit="event.preventDefault(); 
+    const name = this.name.value; 
+    const phone = this.phone.value;
+    const address = this.address.value; 
+    const service = this.service.value; 
+    const notes = this.notes.value ? ' Notes: ' + this.notes.value : '';
+    window.location.href = `sms:14078020334?body=Hello, my name is ${name}. Phone: ${phone}. Address: ${address}. Requesting: ${service}.${notes}`;">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="text" name="address" placeholder="Property Address" required>
+    <select name="service">
+      <option>Weekly Lawn Service</option>
+      <option>Biweekly Lawn Service</option>
+      <option>One-Time Cut</option>
+      <option>Cleanup / Leaf Removal</option>
+      <option>Landscape Design</option>
+      <option>Hedging</option>
+      <option>Mulch / Rocks</option>
+      <option>Other</option>
+    </select>
+    <textarea name="notes" placeholder="Additional Information (Optional)"></textarea>
+    <button type="submit" style="background:#0ea5e9;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">
+      Send Quote by Text
+    </button>
+  </form>
+
+  <!-- EMAIL FORM SPANISH -->
+  <h3>Formulario de Cotización por Email (Español)</h3>
   <form action="mailto:pro365e@gmail.com" method="post" enctype="text/plain">
     <input type="text" name="name" placeholder="Su Nombre" required>
     <input type="email" name="email" placeholder="Su Correo Electrónico" required>
@@ -108,12 +142,46 @@
       <option>Corte de grama quincenal</option>
       <option>Servicio de una sola vez</option>
       <option>Limpieza / Hojas</option>
+      <option>Diseño de paisaje</option>
+      <option>Setos / Hedging</option>
+      <option>Mulch / Rocas</option>
+      <option>Otro</option>
     </select>
+    <textarea name="notes" placeholder="Información adicional (Opcional)"></textarea>
     <button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">
       Enviar Cotización por Email
     </button>
   </form>
 
+  <!-- TEXT FORM SPANISH -->
+  <h3>Enviar Cotización por SMS (Español)</h3>
+  <form onsubmit="event.preventDefault(); 
+    const name = this.name.value; 
+    const phone = this.phone.value;
+    const address = this.address.value; 
+    const service = this.service.value; 
+    const notes = this.notes.value ? ' Información adicional: ' + this.notes.value : '';
+    window.location.href = `sms:14078020334?body=Hola, mi nombre es ${name}. Teléfono: ${phone}. Dirección: ${address}. Servicio solicitado: ${service}.${notes}`;">
+    <input type="text" name="name" placeholder="Su Nombre" required>
+    <input type="tel" name="phone" placeholder="Número de Teléfono" required>
+    <input type="text" name="address" placeholder="Dirección de la Propiedad" required>
+    <select name="service">
+      <option>Corte de grama semanal</option>
+      <option>Corte de grama quincenal</option>
+      <option>Servicio de una sola vez</option>
+      <option>Limpieza / Hojas</option>
+      <option>Diseño de paisaje</option>
+      <option>Setos / Hedging</option>
+      <option>Mulch / Rocas</option>
+      <option>Otro</option>
+    </select>
+    <textarea name="notes" placeholder="Información adicional (Opcional)"></textarea>
+    <button type="submit" style="background:#0ea5e9;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">
+      Enviar Cotización por SMS
+    </button>
+  </form>
+
+  <!-- SERVICE MAP -->
   <h3>Service Area Map</h3>
   <iframe 
     src="https://www.google.com/maps?q=Volusia+County,+Florida&output=embed" 
