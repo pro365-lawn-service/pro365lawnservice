@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PRO365 Lawn Service offers professional lawn care services in Volusia County, FL including mowing, trimming, edging, blowing, landscaping, mulch, and garden care. Bilingual lawn service – English & Spanish." />
+  <meta name="keywords" content="PRO365, lawn, lawn care, mowing, trimming, edging, blowing, landscaping, mulch, hedging, garden, grass, grama, corte, Volusia County" />
+  <title>PRO365 Lawn Service</title>
+
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    header, footer { background:#16a34a; color:#fff; text-align:center; padding:1.5rem; }
+    section { padding:2rem; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .card { padding:1rem; border:1px solid #ccc; border-radius:8px; }
+    input, select, textarea { width:100%; padding:0.6rem; margin-bottom:1rem; border-radius:6px; border:1px solid #ccc; }
+    button { cursor:pointer; }
+    .logo { max-width:180px; margin-bottom:1rem; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <!-- BUSINESS LOGO -->
+  <img src="logo.png" alt="PRO365 Lawn Service Logo" class="logo">
+  <h1>PRO365 Lawn Service</h1>
+  <p>Professional Lawn Care in Volusia County, FL • Bilingual (English & Spanish)</p>
+</header>
+
+<section>
+  <h2>Our Services</h2>
+  <p><strong>Service Areas:</strong> DeLand, Deltona, Daytona Beach, Orange City, DeBary, Port Orange & surrounding areas.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Lawn Maintenance</h3>
+      <ul>
+        <li>Mowing</li>
+        <li>Trimming</li>
+        <li>Edging</li>
+        <li>Blowing</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Additional Services</h3>
+      <ul>
+        <li>Landscape Design</li>
+        <li>Hedging / Bush Trimming</li>
+        <li>Mulch & Rock Installation</li>
+        <li>Leaf Cleanup & Yard Cleanups</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Servicios de Jardinería (Español)</h2>
+  <p><strong>Área de servicio:</strong> Condado de Volusia, Florida y áreas cercanas.</p>
+</section>
+
+<section>
+  <h2>Request a Quote</h2>
+
+  <p>
+    📞 <strong>Call or Text:</strong> (407) 802-0334<br>
+    ⏰ <strong>Hours:</strong> Monday – Friday, 8:00 AM – 7:00 PM
+  </p>
+
+  <!-- EMAIL QUOTE -->
+  <h3>Request a Quote by Email</h3>
+  <form action="mailto:pro365e@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <input type="text" name="Address" placeholder="Property Address" required>
+
+    <select name="Service">
+      <option>Weekly Lawn Service</option>
+      <option>Biweekly Lawn Service</option>
+      <option>One-Time Cut</option>
+      <option>Landscape Design</option>
+      <option>Hedging</option>
+      <option>Mulch / Rocks</option>
+      <option>Leaf Cleanup</option>
+      <option>Other</option>
+    </select>
+
+    <textarea name="Notes" placeholder="Additional Information (Optional)"></textarea>
+
+    <button type="submit" style="background:#16a34a;color:#fff;border:none;border-radius:999px;padding:0.75rem 1.25rem;font-weight:bold;">
+      Send Quote by Email
+    </button>
+  </form>
+
+  <!-- TEXT QUOTE -->
+  <h3>Request a Quote by Text</h3>
+  <form onsubmit="event.preventDefault();
+    const n=this.name.value;
+    const p=this.phone.value;
+    const a=this.address.value;
+    const s=this.service.value;
+    const notes=this.notes.value ? ' Notes: '+this.notes.value : '';
+    window.location.href=`sms:14078020334?body=Name: ${n}%0APhone: ${p}%0AAddress: ${a}%0AService: ${s}${notes}`;">
+    
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="text" name="address" placeholder="Property Address" required>
+
+    <select name="service">
+      <option>Weekly Lawn Service</option>
+      <option>Biweekly Lawn Service</option>
+      <option>One-Time Cut</option>
+      <option>Landscape Design</option>
+      <option>Hedging</option>
+      <option>Mulch / Rocks</option>
+      <option>Leaf Cleanup</option>
+      <option>Other</option>
+    </select>
+
+    <textarea name="notes" placeholder="Additional Information (Optional)"></textarea>
+
+    <button type="submit" style="background:#0ea5e9;color:#fff;border:none;border-radius:999px;padding:0.75rem 1.25rem;font-weight:bold;">
+      Send Quote by Text
+    </button>
+  </form>
+</section>
+
+<section>
+  <h3>Service Area Map</h3>
+  <iframe 
+    src="https://www.google.com/maps?q=Volusia+County,+Florida&output=embed"
+    width="100%" height="300" style="border:0;" allowfullscreen>
+  </iframe>
+</section>
+
+<footer>
+  <p>© 2026 PRO365 Lawn Service</p>
+  <p>Professional • Reliable • Bilingual</p>
+  <p>📘 Visit us on Facebook: PRO365 Lawn Service</p>
+  <p>Call or Text (407) 802-0334</p>
+</footer>
+
+</body>
+</html>
