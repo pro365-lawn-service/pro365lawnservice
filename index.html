@@ -18,8 +18,8 @@
   --card:#ffffff;
   --text:#0f172a;
   --muted:#475569;
-  --shadow:0 12px 30px rgba(0,0,0,.08);
-  --radius:18px;
+  --shadow:0 20px 40px rgba(0,0,0,.12);
+  --radius:20px;
 }
 
 *{box-sizing:border-box}
@@ -33,88 +33,77 @@ body{
 .container{width:min(1100px,92%);margin:auto}
 a{text-decoration:none;color:inherit}
 
-header{
-  background:#fff;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:var(--shadow);
+/* HERO HEADER */
+.hero-header{
+  background:
+    radial-gradient(900px 300px at 50% -10%, rgba(22,163,74,.35), transparent 60%),
+    linear-gradient(180deg,#0b3d1d,#16a34a);
+  color:#fff;
+  text-align:center;
+  padding:60px 20px 70px;
 }
 
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 0;
+.hero-header img{
+  max-width:220px;
+  margin-bottom:20px;
 }
 
-.brand{
+.hero-header h1{
+  font-size:2.6rem;
+  margin:0;
+  letter-spacing:.5px;
+}
+
+.hero-header p{
+  font-size:1.1rem;
+  margin:12px 0 24px;
+  opacity:.95;
+}
+
+.hero-actions{
   display:flex;
   gap:12px;
-  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
-.brand img{
-  width:52px;
-  border-radius:12px;
-}
-
-.nav-actions a{
-  margin-left:8px;
-  padding:10px 14px;
+.hero-actions a{
+  padding:14px 20px;
   border-radius:999px;
-  font-weight:700;
+  font-weight:800;
   background:#fff;
-  border:1px solid #ddd;
+  color:#0b3d1d;
 }
 
-.btn-primary{
-  background:linear-gradient(135deg,var(--green),var(--green-dark));
-  color:#fff;
-  border:none;
-}
-
-.btn-blue{
+.hero-actions .primary{
   background:linear-gradient(135deg,var(--blue),#2563eb);
   color:#fff;
-  border:none;
 }
 
+/* SECTIONS */
 section{padding:40px 0}
+h2{margin-top:0;font-size:1.7rem}
 
-.hero{
+.cards{
   display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:24px;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
 
-.hero-card,.info-card,.card{
+.card{
   background:var(--card);
   padding:24px;
   border-radius:var(--radius);
   box-shadow:var(--shadow);
 }
 
-.hero h1{margin-top:0;font-size:2.2rem}
-.hero p{color:var(--muted)}
-
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 ul{padding-left:18px;color:var(--muted)}
 
-.gallery{
+.form-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:12px;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
-
-.gallery img{
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  border-radius:var(--radius);
-}
-
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 
 input,select,textarea{
   width:100%;
@@ -132,14 +121,16 @@ iframe{
 }
 
 footer{
-  background:linear-gradient(135deg,#0b3d1d,#16a34a);
+  background:#0b3d1d;
   color:#fff;
-  padding:30px 0;
+  text-align:center;
+  padding:30px 20px;
 }
 
 /* MOBILE */
 @media(max-width:800px){
-  .hero,.cards,.form-grid{grid-template-columns:1fr}
+  .cards,.form-grid{grid-template-columns:1fr}
+  .hero-header h1{font-size:2.1rem}
 }
 
 /* STICKY MOBILE QUOTE BUTTON */
@@ -157,7 +148,7 @@ footer{
     padding:14px 22px;
     border-radius:999px;
     font-weight:800;
-    box-shadow:0 12px 30px rgba(0,0,0,.25);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
     z-index:9999;
   }
 }
@@ -166,41 +157,23 @@ footer{
 
 <body>
 
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <img src="logo.png" alt="PRO365 Lawn Service Logo">
-      <div>
-        <strong>PRO365 Lawn Service</strong><br>
-        <small>Volusia County • English & Spanish</small>
-      </div>
-    </div>
-    <div class="nav-actions">
-      <a href="tel:14078020334">Call</a>
-      <a href="sms:14078020334" class="btn-blue">Text</a>
-      <a href="#quote" class="btn-primary">Get Quote</a>
-    </div>
+<!-- HERO HEADER -->
+<div class="hero-header">
+  <img src="logo.png" alt="PRO365 Lawn Service Logo">
+  <h1>PRO365 Lawn Service</h1>
+  <p>Professional Lawn Care • Volusia County, Florida<br>Bilingual • English & Spanish</p>
+
+  <div class="hero-actions">
+    <a href="tel:14078020334">📞 Call</a>
+    <a href="sms:14078020334">💬 Text</a>
+    <a href="#quote" class="primary">Get a Quote</a>
   </div>
-</header>
+</div>
 
 <main class="container">
 
-<section class="hero">
-  <div class="hero-card">
-    <h1>Professional Lawn Care You Can Count On</h1>
-    <p>Mowing, trimming, edging, landscaping, mulch, and cleanups throughout Volusia County, FL.</p>
-    <p><strong>Mon–Fri:</strong> 8:00 AM – 7:00 PM</p>
-  </div>
-
-  <div class="info-card">
-    <p>📞 <strong>(407) 802-0334</strong></p>
-    <p>✉️ pro365e@gmail.com</p>
-    <p>📍 Volusia County, Florida</p>
-  </div>
-</section>
-
 <section>
-  <h2>Services</h2>
+  <h2>Our Services</h2>
   <div class="cards">
     <div class="card">
       <h3>Lawn Care</h3>
@@ -212,11 +185,11 @@ footer{
       </ul>
     </div>
     <div class="card">
-      <h3>Landscaping</h3>
+      <h3>Landscaping & Cleanup</h3>
       <ul>
         <li>Landscape Design</li>
-        <li>Hedging</li>
-        <li>Mulch / Rocks</li>
+        <li>Hedging / Bush Trimming</li>
+        <li>Mulch & Rocks</li>
         <li>Leaf Cleanup</li>
       </ul>
     </div>
@@ -224,24 +197,17 @@ footer{
 </section>
 
 <section>
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="gallery1.jpg">
-    <img src="gallery2.jpg">
-  </div>
-</section>
-
-<section id="quote">
   <h2>Request a Quote</h2>
 
-  <div class="form-grid">
+  <div class="form-grid" id="quote">
 
+    <!-- EMAIL -->
     <div class="card">
       <h3>Email Quote</h3>
       <form action="mailto:pro365e@gmail.com" method="post" enctype="text/plain">
-        <input name="Name" placeholder="Name" required>
-        <input name="Email" type="email" placeholder="Email" required>
-        <input name="Address" placeholder="Address" required>
+        <input name="Name" placeholder="Your Name" required>
+        <input name="Email" type="email" placeholder="Your Email" required>
+        <input name="Address" placeholder="Property Address" required>
         <select name="Service">
           <option>Weekly Lawn Service</option>
           <option>Biweekly Lawn Service</option>
@@ -251,19 +217,20 @@ footer{
           <option>Mulch / Rocks</option>
           <option>Other</option>
         </select>
-        <textarea name="Notes" placeholder="Additional Info (Optional)"></textarea>
-        <button class="btn-primary">Send by Email</button>
+        <textarea name="Notes" placeholder="Additional info (optional)"></textarea>
+        <button class="primary">Send by Email</button>
       </form>
     </div>
 
+    <!-- TEXT -->
     <div class="card">
       <h3>Text Quote (Fastest)</h3>
       <form onsubmit="event.preventDefault();
         const n=this.name.value,p=this.phone.value,a=this.address.value,s=this.service.value,notes=this.notes.value;
         window.location.href=`sms:14078020334?body=Name:${n}%0APhone:${p}%0AAddress:${a}%0AService:${s}%0ANotes:${notes}`;">
-        <input name="name" placeholder="Name" required>
-        <input name="phone" placeholder="Phone" required>
-        <input name="address" placeholder="Address" required>
+        <input name="name" placeholder="Your Name" required>
+        <input name="phone" placeholder="Phone Number" required>
+        <input name="address" placeholder="Property Address" required>
         <select name="service">
           <option>Weekly Lawn Service</option>
           <option>Biweekly Lawn Service</option>
@@ -273,8 +240,8 @@ footer{
           <option>Mulch / Rocks</option>
           <option>Other</option>
         </select>
-        <textarea name="notes" placeholder="Additional Info (Optional)"></textarea>
-        <button class="btn-blue">Send by Text</button>
+        <textarea name="notes" placeholder="Additional info (optional)"></textarea>
+        <button class="primary">Send by Text</button>
       </form>
     </div>
 
@@ -289,11 +256,9 @@ footer{
 </main>
 
 <footer>
-  <div class="container">
-    <p><strong>PRO365 Lawn Service</strong></p>
-    <p>📘 <a href="YOUR_FACEBOOK_PAGE_LINK_HERE" target="_blank">Visit us on Facebook</a></p>
-    <p>Call or Text (407) 802-0334</p>
-  </div>
+  <p><strong>PRO365 Lawn Service</strong></p>
+  <p>📞 (407) 802-0334 • ✉️ pro365e@gmail.com</p>
+  <p>📘 <a href="YOUR_FACEBOOK_PAGE_LINK_HERE" target="_blank" style="color:#fff;">Visit us on Facebook</a></p>
 </footer>
 
 <a href="#quote" class="mobile-sticky-quote">💬 Get a Quote</a>
